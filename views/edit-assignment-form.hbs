@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Assignment</title>
+</head>
+<body>
+    <h1>Edit Assignment</h1>
+    <form method="post">
+        <label for="name">Assignment Name</label>
+        <input type="text" name="name" id="name" value="{{name}}">
+        <label for="score">Your Score</label>
+        <input type="number" name="score" id="score" value="{{score}}">
+        <label for="total">Total Possible Score</label>
+        <input type="number" name="total" id="total" value="{{total}}">
+        <input type="checkbox" name="completed" id="completed" value="{{completed}}">
+        <label for="completed">Have you completed this assignment?</label>
+        <button type="submit">Save</button> <a href="/">Never Mind</a>
+    </form>
+</body>
+</html>

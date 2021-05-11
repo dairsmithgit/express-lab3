@@ -23,6 +23,16 @@ routes.post('/add', (req, res) => {
     res.render("assignment-results", { assignment });
 });
 
+routes.get('/:id/edit', (req, res) => {
+    const id: number = parseInt(req.params.id);
+    const assignment = readAssignmentById(id);
+    if (assignments) {
+        res.render("edit-assignment-form", { assignment });
+    } else {
+        res.status(404);
+    }
+});
+
 routes.get('/:id/delete', (req, res) => {
     const id = parseInt(req.params.id);
     const assignment = readAssignmentById(id);
