@@ -1,6 +1,6 @@
 import express from 'express';
 import Assignment from '../models/Assignment';
-import { assignments, pushAssignment } from '../models/assignment-database';
+import { assignments, pushAssignment, deleteAssignment, readAssignmentById } from '../models/assignment-database';
 
 const routes = express.Router();
 
@@ -21,6 +21,17 @@ routes.post('/add', (req, res) => {
     };
     pushAssignment(assignment);
     res.render("assignment-results", { assignment });
+});
+
+routes.get('/:id/delete', (req, res) => {
+    const id = parseInt(req.params.id);
+    const assignment = readAssignmentById(id);
+    if (assignment) {
+        deleteAssignment(id);
+        res.render('delete-assignment-confirm', { name: assignment.name });
+    } else {
+        res.status(404);
+    }
 });
 
 export default routes;

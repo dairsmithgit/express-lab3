@@ -45,6 +45,10 @@ export const displayAssignments = (): Assignment[] => {
     return assignments;
 }
 
+export function readAssignmentById(id: number): Assignment|undefined {
+    return assignments.find(assignment => assignment.id === id);
+}
+
 export function deleteAssignment(id: number): boolean {
     const index = assignments.findIndex(assignment => assignment.id === id);
     if (index == -1) {
