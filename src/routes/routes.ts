@@ -33,6 +33,17 @@ routes.get('/:id/edit', (req, res) => {
     }
 });
 
+routes.post('/:id/edit-confirm', (req, res) => {
+    const assignment: Assignment = {
+        id: parseInt(req.params.id),
+        name: req.body.name,
+        score: parseInt(req.body.score),
+        total: parseInt(req.body.total),
+        completed: !!req.body.completed
+    }
+    // if update player is player
+});
+
 routes.get('/:id/delete', (req, res) => {
     const id = parseInt(req.params.id);
     const assignment = readAssignmentById(id);

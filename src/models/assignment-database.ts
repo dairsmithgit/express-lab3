@@ -49,6 +49,16 @@ export function readAssignmentById(id: number): Assignment|undefined {
     return assignments.find(assignment => assignment.id === id);
 }
 
+export function editAssignment(assignment: Assignment): boolean {
+    const index = assignments.findIndex(assignment => assignment.id === assignment.id);
+    if (index == -1) {
+        return false;
+    } else {
+        assignments[index] = assignment;
+        return true;
+    }
+}
+
 export function deleteAssignment(id: number): boolean {
     const index = assignments.findIndex(assignment => assignment.id === id);
     if (index == -1) {
