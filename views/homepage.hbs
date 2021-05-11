@@ -16,6 +16,20 @@
             <th>Completed</th>
             <th>Actions</th>
         </tr>
+        {{#each assignments}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{score}}</td>
+            <td>{{total}}</td>
+            <td>{{completed}}</td>
+            <td><a href="#">Edit</a> <a href="#">Delete</a></td>
+        </tr>
+        {{/each}}
     </table>
+
+    <p>Overall Average: %</p>
+
+    <a href="#">Add an Assignment</a>
+    
 </body>
 </html>

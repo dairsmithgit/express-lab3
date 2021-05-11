@@ -21,8 +21,8 @@ export const assignments: Assignment[] = [
         id: 3,
         name: "Biology homework",
         completed: false,
-        total: 10,
-        score: 5
+        total: 20,
+        score: 14
     },
     {
         id: 4,
