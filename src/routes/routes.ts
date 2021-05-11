@@ -1,6 +1,6 @@
 import express from 'express';
 import Assignment from '../models/Assignment';
-import { assignments, pushAssignment, deleteAssignment, readAssignmentById } from '../models/assignment-database';
+import { assignments, pushAssignment, deleteAssignment, readAssignmentById, editAssignment } from '../models/assignment-database';
 
 const routes = express.Router();
 
@@ -42,6 +42,11 @@ routes.post('/:id/edit-confirm', (req, res) => {
         completed: !!req.body.completed
     }
     // if update player is player
+    if (editAssignment(assignment)) {
+        res.render('edit-assignment-confirm', { assignment });
+    } else {
+        res.status(404);
+    }
 });
 
 routes.get('/:id/delete', (req, res) => {
