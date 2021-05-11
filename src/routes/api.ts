@@ -8,4 +8,6 @@ routes.get('/api/assignments', (req, res) => {
     res.status(200);
 });
 
+// the api/summary will require a function
+
 export default routes;
