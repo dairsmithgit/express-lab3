@@ -40,3 +40,7 @@ export const pushAssignment = (assignment: Assignment):void => {
     nextId++;
     assignments.push(assignment);
 };
+
+export const displayAssignments = (): Assignment[] => {
+    return assignments;
+}
