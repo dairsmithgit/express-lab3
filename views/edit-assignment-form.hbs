@@ -8,14 +8,14 @@
 </head>
 <body>
     <h1>Edit Assignment</h1>
-    <form method="post">
+    <form method="post" action="/{{assignment.id}}/edit-confirm">
         <label for="name">Assignment Name</label>
-        <input type="text" name="name" id="name" value="{{name}}">
+        <input type="text" name="name" id="name" value="{{assignment.name}}">
         <label for="score">Your Score</label>
-        <input type="number" name="score" id="score" value="{{score}}">
+        <input type="number" name="score" id="score" value="{{assignment.score}}">
         <label for="total">Total Possible Score</label>
-        <input type="number" name="total" id="total" value="{{total}}">
-        <input type="checkbox" name="completed" id="completed" value="{{completed}}">
+        <input type="number" name="total" id="total" value="{{assignment.total}}">
+        <input type="checkbox" name="completed" id="completed" value="{{assignment.completed}}">
         <label for="completed">Have you completed this assignment?</label>
         <button type="submit">Save</button> <a href="/">Never Mind</a>
     </form>
