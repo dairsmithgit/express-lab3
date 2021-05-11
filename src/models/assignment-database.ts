@@ -32,3 +32,11 @@ export const assignments: Assignment[] = [
         score: 9
     }
 ];
+
+let nextId = 5;
+
+export const pushAssignment = (assignment: Assignment):void => {
+    assignment.id = nextId;
+    nextId++;
+    assignments.push(assignment);
+};
