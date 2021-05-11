@@ -60,4 +60,11 @@ routes.get('/:id/delete', (req, res) => {
     }
 });
 
+// route for avg func
+
+// routes.get("/", (req, res) => {
+//     const average = findAverage(assignments);
+//     res.render('homepage', {assignments, average});
+// });
+
 export default routes;
