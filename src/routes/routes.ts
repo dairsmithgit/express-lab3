@@ -20,7 +20,7 @@ routes.post('/add', (req, res) => {
         completed: !!req.body.completed
     };
     pushAssignment(assignment);
-    res.render("assignment-result", { assignment });
+    res.render("assignment-results", { assignment });
 });
 
 export default routes;
