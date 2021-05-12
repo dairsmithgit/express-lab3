@@ -9,7 +9,10 @@ routes.get('/api/assignments', (req, res) => {
 });
 
 routes.get('/api/summary', (req, res) => {
-    res.json(findAverage(assignments));
+    const overallAverage = findAverage(assignments);
+    const assignmentArray = displayAssignments();
+    res.json(overallAverage);
+    res.status(200);
 });
 
 // the api/summary will require a function
