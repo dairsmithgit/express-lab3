@@ -71,16 +71,16 @@ export function deleteAssignment(id: number): boolean {
 
 // function with kaleigh
 
-// export function findAverage(assignments: Assignment[]): string {
-//     let total = 0;
-//     let assignmentTotal = 0;
-//     for (let assignment of assignments) {
-//         let i = assignment.score;
-//         total += i;
-//         let x = assignment.total;
-//         assignmentTotal += x;
-//     }
-//     let average = total / assignmentTotal * 100;
-//     let displayAverage = average.toFixed(2);
-//     return displayAverage;
-// }
+export function findAverage(assignments: Assignment[]): string {
+    let total = 0;
+    let assignmentTotal = 0;
+    for (let assignment of assignments) {
+        let i = assignment.score;
+        total += i;
+        let x = assignment.total;
+        assignmentTotal += x;
+    }
+    let average = total / assignmentTotal * 100;
+    let displayAverage = average.toFixed(2);
+    return displayAverage;
+}

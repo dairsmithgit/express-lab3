@@ -1,11 +1,12 @@
 import express from 'express';
 import Assignment from '../models/Assignment';
-import { assignments, pushAssignment, deleteAssignment, readAssignmentById, editAssignment } from '../models/assignment-database';
+import { assignments, pushAssignment, deleteAssignment, readAssignmentById, editAssignment, findAverage } from '../models/assignment-database';
 
 const routes = express.Router();
 
 routes.get('/', (req, res) => {
-    res.render("homepage", { assignments });
+    const average = findAverage(assignments);
+    res.render("homepage", { assignments, average });
 });
 
 routes.get('/add', (req, res) => {
